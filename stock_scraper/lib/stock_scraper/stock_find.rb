@@ -8,17 +8,9 @@ class StockScraper::Stock_Find
     stocks << self.stock_scrape
   end
   def self.stock_scrape
-    stocks1 = self.new
-    stocks1.ticker = "FB"
-    stocks1.company = "Facebook"
-    stocks1.price = 198
-    stocks1.per_change = 56
-
-    stocks2 = self.new
-    stocks2.ticker = "AAPL"
-    stocks2.company = "Aaple, Inc."
-    stocks2.price = 197
-    stocks2.per_change = 47
-    [stocks1, stocks2]
+    doc = Nokogiri::HTML(open("https://www.marketwatch.com/"))
+    stock = self.new
+    stock.ticker = doc.search("span.mover__symbol").text.strip
+    binding.pry
   end
 end
