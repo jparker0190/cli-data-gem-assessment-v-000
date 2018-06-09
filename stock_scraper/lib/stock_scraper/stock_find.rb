@@ -1,16 +1,15 @@
 class StockScraper::Stock_Find
-  attr_accessor :ticker, :company, :price, :per_change
-  def self.today
-    self.stock_scrape
+  attr_accessor :ticker, :url
+  def initialize(ticker = nil, url = nil)
+    @ticker = ticker
+    @url = url
   end
-  def self.scrape
-    stocks = []
-    stocks << self.stock_scrape
+  def self.all
+    @@all ||= stock_scrape
   end
   def self.stock_scrape
     doc = Nokogiri::HTML(open("https://www.marketwatch.com/"))
-    stock = self.new
-    stock.ticker = doc.search("span.mover__symbol").text.strip
-    binding.pry
+    stock = doc.search("a.list__item")
+    stock.collect{|t| new(t.search('span.mover__symbol').text, t.attribute('href'))}
   end
 end
