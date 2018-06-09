@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "stock_scraper"
+
+StockScraper::CLI.new.call
