@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Run: ```stock-scrape after installing the gem.
+Run: `stock-scrape` after installing the gem.
 
 ## Development
 
