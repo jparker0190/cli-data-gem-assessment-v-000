@@ -1,8 +1,6 @@
 # StockScraper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/stock_scraper`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem will scrape marketwatch.com for the S%P 500's most active stocks and return the them in a numbered list. Which you can then enter the number of the stock you would like more information on and it will provide a link that you can click and be directed to that stock's marketwatch page.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: stock-scrape after installing the gem.
 
 ## Development
 
