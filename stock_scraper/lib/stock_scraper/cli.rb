@@ -8,7 +8,7 @@ class StockScraper::CLI
     puts "Here are the most active stocks in the S&P:"
     puts ""
     @stocks = StockScraper::Stock_Find.all
-    @stocks.each.with_index(1) do |equity, i|
+    @stocks.each.with_index(1).reverse.drop(1).reverse do |equity, i|
       puts"#{i}. #{equity.ticker}"
     end
   end
